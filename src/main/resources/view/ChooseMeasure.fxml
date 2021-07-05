@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="862.0" prefWidth="1228.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="exam.controller.ChooseMeasureController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="1228.0">
+            <children>
+                <Button fx:id="returnBtn" mnemonicParsing="false" onAction="#handleReturn" prefHeight="33.0" prefWidth="114.0" text="Return">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                </Button>
+                <Label fx:id="idLabel" prefHeight="31.0" prefWidth="454.0" text="Food Label: ">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </Label>
+            <Button fx:id="reportBtn" mnemonicParsing="false" onAction="#sendReport" prefHeight="33.0" prefWidth="114.0" text="Send Report">
+               <HBox.margin>
+                  <Insets left="450.0" />
+               </HBox.margin>
+            </Button>
+            </children>
+        </HBox>
+        <TabPane fx:id="tabPane" prefHeight="814.0" prefWidth="1228.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="measureTab" closable="false" text="Measures">
+                    <content>
+                        <TableView fx:id="table" layoutX="-1.0" prefHeight="785.0" prefWidth="1228.0">
+                            <columns>
+                                <TableColumn fx:id="labelCol" prefWidth="326.3173028037363" text="Measure Label" />
+                                <TableColumn fx:id="uriCol" prefWidth="438.87115478515625" text="Measure URI" />
+                                <TableColumn fx:id="weightCol" prefWidth="282.727783203125" text="Weight" />
+                                <TableColumn fx:id="infoCol" prefWidth="181.272216796875" text="Get Nutrition Information" />
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+                <Tab fx:id="nutrientTab" closable="false" text="Nutrients">
+                    <content>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                            <content>
+                                <TableView fx:id="nutritionTable" prefHeight="716.0" prefWidth="1228.0">
+                                    <columns>
+                                        <TableColumn fx:id="foodCol" prefWidth="75.0" text="Food" />
+                                        <TableColumn fx:id="nuriCol" prefWidth="75.0" text="Uri" />
+                                        <TableColumn fx:id="yieldCol" prefWidth="56.71917724609375" text="Yield" />
+                                        <TableColumn fx:id="caloryCol" prefWidth="74.42440795898438" text="Calories" />
+                                        <TableColumn fx:id="glycemicCol" prefWidth="104.73318481445312" text="Glycemic Index" />
+                                        <TableColumn fx:id="totalWeightCol" prefWidth="100.75906372070312" text="Total Weight" />
+                                        <TableColumn fx:id="dietLabelCol" prefWidth="130.71917724609375" text="Diet Labels" />
+                                        <TableColumn fx:id="healthLabelCol" prefWidth="122.78082275390625" text="Health Labels" />
+                                        <TableColumn fx:id="cautionCol" prefWidth="117.920166015625" text="Cautions" />
+                                        <TableColumn fx:id="totalNutrientCol" prefWidth="171.579833984375" text="Total Nutrients" />
+                                        <TableColumn fx:id="dailyCol" prefWidth="198.9068603515625" text="Total Daily" />
+                                    </columns>
+                                </TableView>
+                            </content>
+                        </ScrollPane>
+                    </content>
+            </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>
